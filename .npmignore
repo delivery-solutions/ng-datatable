@@ -17,3 +17,4 @@ systemjs.config.js
 .npmignore
 release.sh
 .travis.yml
+.npmrc
