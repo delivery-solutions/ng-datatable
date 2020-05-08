@@ -18,8 +18,8 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@rushvora/ng-datatable": ["../../.."],
-      "@rushvora/ng-datatable/*": ["../../../*"]
+      "@deliverysolutions/ng-datatable": ["../../.."],
+      "@deliverysolutions/ng-datatable/*": ["../../../*"]
     }
   }
 }

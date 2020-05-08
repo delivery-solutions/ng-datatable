@@ -25,7 +25,7 @@
 
             // other libraries
             'rxjs': 'npm:rxjs',
-            '@rushvora/ng-datatable': 'npm:@rushvora/ng-datatable',
+            '@deliverysolutions/ng-datatable': 'npm:@deliverysolutions/ng-datatable',
             'lodash': 'npm:lodash/lodash.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
@@ -42,7 +42,7 @@
                 main: 'index.js',
                 defaultExtension: 'js'
             },
-            '@rushvora/ng-datatable': {
+            '@deliverysolutions/ng-datatable': {
                 main: 'index.js',
                 defaultExtension: 'js'
             }

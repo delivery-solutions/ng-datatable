@@ -65,7 +65,7 @@ When feather releases their sort icons (should be soon, going by the related iss
 ## Installation
 
 ```
-npm i @rushvora/ng-datatable --save
+npm i @deliverysolutions/ng-datatable --save
 ```
 
 ## Usage example
@@ -74,7 +74,7 @@ AppModule.ts
 ```typescript
 import {NgModule} from "@angular/core";
 ...
-import {DataTableModule} from "@rushvora/ng-datatable";
+import {DataTableModule} from "@deliverysolutions/ng-datatable";
 
 @NgModule({
     imports: [

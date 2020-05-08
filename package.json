@@ -1,5 +1,5 @@
 {
-  "name": "@rushvora/ng-datatable",
+  "name": "@deliverysolutions/ng-datatable",
   "version": "8.0.5",
   "description": "DataTable component for Angular framework",
   "main": "index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rushvora/ng-datatable.git"
+    "url": "git+https://github.com/ds-arb/ng-datatable.git"
   },
   "keywords": [
     "angular",
@@ -28,12 +28,12 @@
     "sorting",
     "feather"
   ],
-  "author": "rushvora@gmail.com",
+  "author": "rushabh@deliverysolutions.co",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rushvora/ng-datatable/issues"
+    "url": "https://github.com/ds-arb/ng-datatable/issues"
   },
-  "homepage": "https://github.com/rushvora/ng-datatable#readme",
+  "homepage": "https://github.com/ds-arb/ng-datatable#readme",
   "devDependencies": {
     "@angular/common": "^8.0.0",
     "@angular/compiler": "^8.0.0",
