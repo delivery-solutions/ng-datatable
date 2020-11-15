@@ -1,5 +1,11 @@
 # Changelog
 
+## 11.0.0 (2020-11-15)
+
+Changes:
+    
+    - Use Angular 11
+
 ## 10.0.0 (2020-06-27)
 
 Changes:
