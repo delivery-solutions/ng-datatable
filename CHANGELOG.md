@@ -1,5 +1,11 @@
 # Changelog
 
+## 11.0.1 (2020-11-23)
+
+Changes:
+    
+    - Specify correct peer dependency version
+
 ## 11.0.0 (2020-11-15)
 
 Changes:
