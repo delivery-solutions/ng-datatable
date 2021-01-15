@@ -1,5 +1,11 @@
 # Changelog
 
+## 11.1.0 (2020-11-23)
+
+Changes:
+    
+    - Remove dependency to lodash
+
 ## 11.0.1 (2020-11-23)
 
 Changes:

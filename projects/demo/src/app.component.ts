@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
         return a.city.length;
     }
 
-    public remove(item) {
+    public remove(item: any) {
         const index = this.data.indexOf(item);
         if (index > -1) {
             this.data.splice(index, 1);

@@ -90,10 +90,7 @@
             "scripts": [],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
-            ],
-            "allowedCommonJsDependencies": [
-              "lodash"
-           ]
+            ]
           },
           "configurations": {
             "production": {

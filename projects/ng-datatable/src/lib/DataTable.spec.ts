@@ -3,7 +3,7 @@ import {DataTable, PageEvent, SortEvent} from "./DataTable";
 import {TestBed, ComponentFixture} from "@angular/core/testing";
 import {By} from "@angular/platform-browser";
 import {switchMap} from "rxjs/operators";
-import {times} from "lodash";
+import { range } from "rxjs";
 
 @Component({
     template: `<table [mfData]="[]"></table>`
@@ -111,9 +111,16 @@ describe("DataTable directive tests", () => {
             datatable.ngOnChanges({rowsOnPage: new SimpleChange(2, 3, false)});
             datatable.ngDoCheck();
             expect(datatable.data).toEqual([{id: 3, name: "banana"}, {id: 1, name: "Duck"}, {id: 2, name: "ącki"}]);
-
-
         });
+
+        it("should emit a dataLength of 0 when inputData is null or undefined", (done) => {
+            datatable.onPageChange.subscribe((pageOptions: PageEvent)=> {
+                expect(pageOptions.dataLength).toEqual(0);
+                done();
+            });
+            datatable.inputData = null;
+            datatable.setPage(2, 3);
+        })
     });
 
     describe("sorting", () => {
@@ -197,6 +204,20 @@ describe("DataTable directive tests", () => {
             ]);
         });
 
+        it("should set sortOrder to 'asc' if setSort is given something else than 'asc' or 'desc'", () => {
+            datatable.setSort("id", "bulb" as "desc");
+            expect(datatable.getSort()).toEqual({sortBy: "id", sortOrder: "asc"});
+            datatable.ngDoCheck();
+            expect(datatable.sortOrder).toEqual("asc");
+            expect(datatable.data).toEqual([
+                {id: 1, name: 'Duck'},
+                {id: 2, name: 'ącki'},
+                {id: 3, name: 'banana'},
+                {id: 4, name: 'Ananas'},
+                {id: 5, name: 'Ðrone'}
+            ]);
+        });
+
         it("shouldn't change order when only order provided", (done) => {
             done();
             datatable.onSortChange.subscribe(() => {
@@ -272,6 +293,7 @@ describe("DataTable directive tests", () => {
                 {name: "Claire", age: 9},
                 {name: "Anna", age: 34},
                 {name: "Claire", age: 16},
+                {name: "Anna", age: 12},
                 {name: "Claire", age: 7},
                 {name: "Anna", age: 12}
             ];
@@ -280,6 +302,7 @@ describe("DataTable directive tests", () => {
             datatable.ngDoCheck();
 
             expect(datatable.data).toEqual([
+                {name: "Anna", age: 12},
                 {name: "Anna", age: 12},
                 {name: "Anna", age: 34},
                 {name: "Claire", age: 7},
@@ -375,7 +398,7 @@ describe("DataTable directive tests", () => {
                 expect(opt.rowsOnPage).toEqual(2);
                 done();
             });
-            times(3, () => datatable.inputData.pop());
+            range(0, 3).forEach(() => datatable.inputData.pop());
             datatable.ngDoCheck();
         });
 
@@ -445,7 +468,7 @@ describe("DataTable directive tests", () => {
             datatable.setPage(2, 1);
             datatable.ngDoCheck();
 
-            times(5, () => datatable.inputData.pop());
+            range(0, 5).forEach(() => datatable.inputData.pop());
             datatable.ngDoCheck();
             expect(datatable.inputData.length).toEqual(0);
             expect(datatable.activePage).toEqual(1);
