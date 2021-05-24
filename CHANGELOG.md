@@ -1,5 +1,14 @@
 # Changelog
 
+## 12.0.0 (2020-11-23)
+
+Changes:
+
+- Use Angular 12
+- Sort headers are now 508 compliant and are usable by keyboard (Thanks @kvbutler)
+- Publish in partial-ivy support - Angular ivy compiler required
+- Stricter type declarations to prevent surprising runtime errors
+
 ## 11.1.0 (2020-11-23)
 
 Changes:
