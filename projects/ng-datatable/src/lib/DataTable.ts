@@ -4,8 +4,13 @@ import {
 } from "@angular/core";
 import { ReplaySubject } from "rxjs";
 
+
+export type SortOrder = "asc" | "desc";
+export type SortByFunction = (data: any) => any;
+export type SortBy = string | SortByFunction | (string | SortByFunction)[];
+
 export interface SortEvent {
-    sortBy: string | string[] | Function | Function[];
+    sortBy: SortBy;
     sortOrder: string;
 }
 
@@ -28,10 +33,10 @@ export class DataTable implements OnChanges, DoCheck {
     private diff: IterableDiffer<any>;
     @Input("mfData") public inputData: any[] = [];
 
-    @Input("mfSortBy") public sortBy: string | string[] | Function | Function[] = "";
-    @Input("mfSortOrder") public sortOrder: "asc" | "desc" = "asc";
-    @Output("mfSortByChange") public sortByChange = new EventEmitter<string | string[]>();
-    @Output("mfSortOrderChange") public sortOrderChange = new EventEmitter<string>();
+    @Input("mfSortBy") public sortBy: SortBy = "";
+    @Input("mfSortOrder") public sortOrder: SortOrder = "asc";
+    @Output("mfSortByChange") public sortByChange = new EventEmitter<SortBy>();
+    @Output("mfSortOrderChange") public sortOrderChange = new EventEmitter<SortOrder>();
 
     @Input("mfRowsOnPage") public rowsOnPage = 1000;
     @Input("mfActivePage") public activePage = 1;
@@ -43,15 +48,15 @@ export class DataTable implements OnChanges, DoCheck {
     public onSortChange = new ReplaySubject<SortEvent>(1);
     public onPageChange = new EventEmitter<PageEvent>();
 
-    public constructor(private differs: IterableDiffers) {
-        this.diff = differs.find([]).create(null);
+    public constructor(differs: IterableDiffers) {
+        this.diff = differs.find([]).create();
     }
 
     public getSort(): SortEvent {
         return { sortBy: this.sortBy, sortOrder: this.sortOrder };
     }
 
-    public setSort(sortBy: string | string[], sortOrder: "asc" | "desc"): void {
+    public setSort(sortBy: SortBy, sortOrder: SortOrder): void {
         if (this.sortBy !== sortBy || this.sortOrder !== sortOrder) {
             this.sortBy = sortBy;
             this.sortOrder = ["asc", "desc"].indexOf(sortOrder) >= 0 ? sortOrder : "asc";
@@ -151,7 +156,7 @@ export class DataTable implements OnChanges, DoCheck {
             .slice(offset, offset + this.rowsOnPage);
     }
 
-    private caseInsensitiveIteratee(sortBy: string | Function) {
+    private caseInsensitiveIteratee(sortBy: string | SortByFunction) {
         return (row: any): any => {
             let value = row;
             if (typeof sortBy === "string" || sortBy instanceof String) {
@@ -176,10 +181,10 @@ export class DataTable implements OnChanges, DoCheck {
         return left === right ? 0 : left == null || left > right ? 1 : -1;
     }
 
-    private sorter<T>(sortBy: string | Function | (string | Function)[], sortOrder: string): (left: T, right: T) => number {
+    private sorter<T>(sortBy: SortBy, sortOrder: SortOrder): (left: T, right: T) => number {
         const order = sortOrder === "desc" ? -1 : 1;
         if (Array.isArray(sortBy)) {
-            const iteratees = sortBy.map((entry: string | Function) => this.caseInsensitiveIteratee(entry));
+            const iteratees = sortBy.map((entry) => this.caseInsensitiveIteratee(entry));
             return (left, right) => {
                 for (const iteratee of iteratees) {
                     const comparison = this.compare(iteratee(left), iteratee(right)) * order;

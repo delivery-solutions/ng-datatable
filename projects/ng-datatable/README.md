@@ -77,7 +77,7 @@ AppComponent.html
    - `mfRowsOnPage: number` - number of rows should be displayed on page (default: 1000)
    - `mfActivePage: number` - page number (default: 1)
    - `mfSortBy: any` - sort by parameter
-   - `mfSortOrder: string` - sort order parameter, "asc" or "desc"
+   - `mfSortOrder: "asc" | "desc"` - sort order parameter
  - outputs
    - `mfSortByChange: any` - sort by parameter
    - `mfSortOrderChange: any` - sort order parameter

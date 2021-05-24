@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from "@angular/core";
-import {DataTable, SortEvent} from "./DataTable";
+import {DataTable, SortBy, SortEvent} from "./DataTable";
 
 @Component({
     selector: "mfDefaultSorter",
@@ -11,7 +11,7 @@ import {DataTable, SortEvent} from "./DataTable";
         </a>`
 })
 export class DefaultSorter implements OnInit {
-    @Input("by") sortBy: string;
+    @Input("by") sortBy: SortBy;
 
     isSortedByMeAsc = false;
     isSortedByMeDesc = false;

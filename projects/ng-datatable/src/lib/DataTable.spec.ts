@@ -1,5 +1,5 @@
 import {SimpleChange, Component} from "@angular/core";
-import {DataTable, PageEvent, SortEvent} from "./DataTable";
+import {DataTable, PageEvent, SortBy, SortEvent, SortOrder} from "./DataTable";
 import {TestBed, ComponentFixture} from "@angular/core/testing";
 import {By} from "@angular/platform-browser";
 import {switchMap} from "rxjs/operators";
@@ -114,13 +114,13 @@ describe("DataTable directive tests", () => {
         });
 
         it("should emit a dataLength of 0 when inputData is null or undefined", (done) => {
-            datatable.onPageChange.subscribe((pageOptions: PageEvent)=> {
+            datatable.onPageChange.subscribe((pageOptions: PageEvent) => {
                 expect(pageOptions.dataLength).toEqual(0);
                 done();
             });
-            datatable.inputData = null;
+            datatable.inputData = null as any;
             datatable.setPage(2, 3);
-        })
+        });
     });
 
     describe("sorting", () => {
@@ -210,11 +210,11 @@ describe("DataTable directive tests", () => {
             datatable.ngDoCheck();
             expect(datatable.sortOrder).toEqual("asc");
             expect(datatable.data).toEqual([
-                {id: 1, name: 'Duck'},
-                {id: 2, name: 'ącki'},
-                {id: 3, name: 'banana'},
-                {id: 4, name: 'Ananas'},
-                {id: 5, name: 'Ðrone'}
+                {id: 1, name: "Duck"},
+                {id: 2, name: "ącki"},
+                {id: 3, name: "banana"},
+                {id: 4, name: "Ananas"},
+                {id: 5, name: "Ðrone"}
             ]);
         });
 
@@ -232,10 +232,10 @@ describe("DataTable directive tests", () => {
 
         it("should call output event when sorting changed", (done) => {
             datatable.ngDoCheck();
-            datatable.sortByChange.pipe(switchMap((sortBy: string) => {
+            datatable.sortByChange.pipe(switchMap((sortBy: SortBy) => {
                 expect(sortBy).toEqual("id");
                 return datatable.sortOrderChange;
-            })).subscribe((sortOrder: string) => {
+            })).subscribe((sortOrder: SortOrder) => {
                 expect(sortOrder).toEqual("desc");
                 done();
             });
@@ -458,8 +458,7 @@ describe("DataTable directive tests", () => {
             datatable.setPage(2, 1);
             datatable.ngDoCheck();
 
-            const newData = [];
-            datatable.ngOnChanges({inputData: new SimpleChange(datatable.inputData, newData, false)});
+            datatable.ngOnChanges({inputData: new SimpleChange(datatable.inputData, [], false)});
             datatable.ngDoCheck();
             expect(datatable.activePage).toEqual(1);
         });

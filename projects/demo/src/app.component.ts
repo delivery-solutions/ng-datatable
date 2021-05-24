@@ -1,5 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
+import {SortBy, SortOrder} from "ng-datatable";
 
 @Component({
     selector: "app-root",
@@ -10,8 +11,8 @@ export class AppComponent implements OnInit {
     public data: any[];
     public filterQuery = "";
     public rowsOnPage = 10;
-    public sortBy = "email";
-    public sortOrder = "asc";
+    public sortBy: SortBy = "email";
+    public sortOrder: SortOrder = "asc";
 
     constructor(private http: HttpClient) {
     }
