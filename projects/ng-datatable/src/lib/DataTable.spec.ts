@@ -2,8 +2,7 @@ import {SimpleChange, Component} from "@angular/core";
 import {DataTable, PageEvent, SortBy, SortEvent, SortOrder} from "./DataTable";
 import {TestBed, ComponentFixture} from "@angular/core/testing";
 import {By} from "@angular/platform-browser";
-import {switchMap} from "rxjs/operators";
-import { range } from "rxjs";
+import {switchMap, range} from "rxjs";
 
 @Component({
     template: `<table [mfData]="[]"></table>`
