@@ -49,8 +49,8 @@ import {DataTable} from "./DataTable";
     `
 })
 export class BootstrapPaginator implements OnChanges {
-    @Input("rowsOnPageSet") rowsOnPageSet: number[] = [];
-    @Input("mfTable") mfTable: DataTable;
+    @Input() rowsOnPageSet: number[] = [];
+    @Input() mfTable: DataTable;
 
     minRowsOnPage = 0;
 

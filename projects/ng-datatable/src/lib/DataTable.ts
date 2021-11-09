@@ -103,12 +103,12 @@ export class DataTable implements OnChanges, DoCheck {
     }
 
     public ngOnChanges(changes: { [key: string]: SimpleChange }): any {
-        if (changes.rowsOnPage) {
-            this.rowsOnPage = changes.rowsOnPage.previousValue;
-            this.setPage(this.activePage, changes.rowsOnPage.currentValue);
+        if (changes["rowsOnPage"]) {
+            this.rowsOnPage = changes["rowsOnPage"].previousValue;
+            this.setPage(this.activePage, changes["rowsOnPage"].currentValue);
             this.mustRecalculateData = true;
         }
-        if (changes.sortBy || changes.sortOrder) {
+        if (changes["sortBy"] || changes["sortOrder"]) {
             if (["asc", "desc"].indexOf(this.sortOrder) < 0) {
                 console.warn("ng-datatable: value for input mfSortOrder must be one of ['asc', 'desc'], but is:", this.sortOrder);
                 this.sortOrder = "asc";
@@ -118,8 +118,8 @@ export class DataTable implements OnChanges, DoCheck {
             }
             this.mustRecalculateData = true;
         }
-        if (changes.inputData) {
-            this.inputData = changes.inputData.currentValue || [];
+        if (changes["inputData"]) {
+            this.inputData = changes["inputData"].currentValue || [];
             this.recalculatePage();
             this.mustRecalculateData = true;
         }
