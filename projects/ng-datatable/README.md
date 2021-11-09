@@ -89,7 +89,7 @@ AppComponent.html
    - `by: any` - specify how to sort data (argument for lodash function [_.sortBy ](https://lodash.com/docs#sortBy))
  
 ### `mfBootstrapPaginator` component
-Displays buttons for changing current page and number of displayed rows using bootstrap template (css for bootstrap is required). If array length is smaller than current displayed rows on page then it doesn't show button for changing page. If array length is smaller than min value rowsOnPage then it doesn't show any buttons.
+Displays buttons for changing current page and number of displayed rows using bootstrap template (css for bootstrap 5 is required). If array length is smaller than current displayed rows on page then it doesn't show button for changing page. If array length is smaller than min value rowsOnPage then it doesn't show any buttons.
 
  - selector: `mfBootstrapPaginator`
  - inputs

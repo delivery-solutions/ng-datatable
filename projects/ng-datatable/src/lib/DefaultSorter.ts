@@ -4,11 +4,14 @@ import {DataTable, SortBy, SortEvent} from "./DataTable";
 @Component({
     selector: "mfDefaultSorter",
     template: `
-        <a style="cursor: pointer" (click)="sort()" (keydown.enter)="sort()" (keydown.space)="sort()" class="text-nowrap" tabindex="0">
+        <a (click)="sort()" (keydown.enter)="sort()" (keydown.space)="sort()" class="text-nowrap text-decoration-none" tabindex="0">
             <ng-content></ng-content>
-            <span *ngIf="isSortedByMeAsc" class="glyphicon glyphicon-triangle-top" aria-hidden="true" aria-label="asc"></span>
-            <span *ngIf="isSortedByMeDesc" class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" aria-label="desc"></span>
-        </a>`
+            <span *ngIf="isSortedByMeAsc" aria-hidden="true" aria-label="asc">▲</span>
+            <span *ngIf="isSortedByMeDesc" aria-hidden="true" aria-label="desc">▼</span>
+        </a>`,
+        styles: [
+            "a { cursor: pointer; }"
+        ]
 })
 export class DefaultSorter implements OnInit {
     @Input("by") sortBy: SortBy;
