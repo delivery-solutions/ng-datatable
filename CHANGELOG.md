@@ -1,5 +1,14 @@
 # Changelog
 
+## 13.0.0 (2021-11-10)
+
+Changes
+
+- Use Angular 13
+- Switch to Bootstrap 5 (**Breaking**)
+
+This release is the first to ever touch the UI in a considerable way. If your project relies on an old version of Bootstrap this table might not look ideal in its latest version. Custom stylings might need to be adjusted, see the demo project for an example of the new bootstrap classes to use.
+
 ## 12.0.1 (2020-11-23)
 
 Changes:
