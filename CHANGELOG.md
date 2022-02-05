@@ -1,5 +1,13 @@
 # Changelog
 
+## 13.1.0 (2022-02-05)
+
+Changes
+
+- Consistently sort nullish values (#8) (**Changed behaviour**)
+
+This release fixes the very strange null sorting behaviour. Null values are now treated like empty strings and are placed at the top when sorting ascendingly.
+
 ## 13.0.0 (2021-11-10)
 
 Changes
