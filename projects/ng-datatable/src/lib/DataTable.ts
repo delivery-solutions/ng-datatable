@@ -178,7 +178,16 @@ export class DataTable implements OnChanges, DoCheck {
     }
 
     private compare(left: any, right: any): number {
-        return left === right ? 0 : left == null || left > right ? 1 : -1;
+        if (left === right) {
+            return 0;
+        }
+        if (left == null && right != null) {
+            return -1;
+        }
+        if (right == null) {
+            return 1;
+        }
+        return left > right ? 1 : -1;
     }
 
     private sorter<T>(sortBy: SortBy, sortOrder: SortOrder): (left: T, right: T) => number {
