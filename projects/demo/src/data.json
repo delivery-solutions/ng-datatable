@@ -655,7 +655,7 @@
     "email": "faucibus@tellus.org",
     "regDate": "2015-10-30T13:07:22-07:00",
     "city": "St. Thomas",
-    "age": 40
+    "age": null
   },
   {
     "name": "Iona",
@@ -683,7 +683,7 @@
     "email": "posuere.cubilia.Curae@estNunclaoreet.net",
     "regDate": "2016-08-16T20:42:44-07:00",
     "city": "Pak Pattan",
-    "age": 24
+    "age": null
   },
   {
     "name": "Matthew",
@@ -693,10 +693,17 @@
     "age": 35
   },
   {
-    "name": "Justina",
-    "email": "Donec.nibh@Vivamusmolestie.ca",
-    "regDate": "2015-06-24T14:38:07-07:00",
-    "city": "Kobbegem",
-    "age": 22
+    "name": "Max",
+    "email": null,
+    "regDate": "2022-02-05T10:40:07-07:00",
+    "city": "Nowhere",
+    "age": 0
+  },
+  {
+    "name": "Müller",
+    "email": "",
+    "regDate": "2022-02-05T10:40:07-07:00",
+    "city": "Berlin",
+    "age": null
   }
 ]
