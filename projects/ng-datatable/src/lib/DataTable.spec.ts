@@ -324,12 +324,12 @@ describe("DataTable directive tests", () => {
             datatable.ngDoCheck();
 
             expect(datatable.data).toEqual([
+                {name: "Anna"},
+                {name: "Donald", city: 2},
                 {name: "Claire", city: {zip: "11111"}},
                 {name: "Anna", city: {zip: "21111"}},
                 {name: "Claire", city: {zip: "41111"}},
                 {name: "Claire", city: {zip: "51111"}},
-                {name: "Anna"},
-                {name: "Donald", city: 2},
             ]);
         });
     });
