@@ -120,6 +120,7 @@ export class DataTable implements OnChanges, DoCheck {
         }
         if (changes["inputData"]) {
             this.inputData = changes["inputData"].currentValue || [];
+            this.diff.diff(this.inputData); // Update diff to prevent duplicate update in ngDoCheck
             this.recalculatePage();
             this.mustRecalculateData = true;
         }
