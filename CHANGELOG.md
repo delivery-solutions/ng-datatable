@@ -1,5 +1,13 @@
 # Changelog
 
+## 14.0.0 (2022-06-19)
+
+Changes
+
+- Use Angular 14
+
+This update seems to have changed the behaviour of the change detection, if you notice any unexpected behaviour please open a new issue.
+
 ## 13.1.0 (2022-02-05)
 
 Changes
