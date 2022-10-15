@@ -1,7 +1,7 @@
 {
   "extends": "../../.eslintrc.json",
   "ignorePatterns": [
-    "projects/**/*"
+    "!**/*"
   ],
   "overrides": [
     {
@@ -15,10 +15,6 @@
         ],
         "createDefaultProgram": true
       },
-      "extends": [
-        "plugin:@angular-eslint/recommended",
-        "plugin:@angular-eslint/template/process-inline-templates"
-      ],
       "rules": {
         "@angular-eslint/directive-selector": "off",
         "@angular-eslint/directive-class-suffix": "off",
@@ -28,12 +24,6 @@
         "@angular-eslint/no-input-rename": "off",
         "@angular-eslint/no-output-rename": "off"
       }
-    },
-    {
-      "files": [
-        "*.html"
-      ],
-      "rules": {}
     }
   ]
 }
