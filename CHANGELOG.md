@@ -1,5 +1,12 @@
 # Changelog
 
+## 14.0.1 (2022-10-15)
+
+Changes
+
+- Minor dependency upgrades
+- Adjust linting configuration
+
 ## 14.0.0 (2022-06-19)
 
 Changes
