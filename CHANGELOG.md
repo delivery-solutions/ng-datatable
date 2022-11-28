@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.0.0 (2022-11-28)
+
+Changes
+
+- Use Angular 15
+
 ## 14.0.1 (2022-10-15)
 
 Changes
