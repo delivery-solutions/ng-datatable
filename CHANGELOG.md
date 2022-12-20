@@ -1,5 +1,11 @@
 # Changelog
 
+## 15.1.0 (2022-11-28)
+
+Changes
+
+- Not not throw runtime error if sortBy is undefined (thanks @alexkushnarov)
+
 ## 15.0.0 (2022-11-28)
 
 Changes
