@@ -166,7 +166,7 @@ export class DataTable implements OnChanges, DoCheck {
                         value = value[sortByProperty];
                     }
                 }
-            } else {
+            } else if (typeof sortBy === "function") {
                 value = sortBy(value);
             }
 
