@@ -1,5 +1,10 @@
 # Changelog
 
+## 15.1.1 (2023-02-18)
+Changes
+
+- Update dependencies to latest (closes #13)
+
 ## 15.1.0 (2022-11-28)
 
 Changes
