@@ -1,5 +1,10 @@
 # Changelog
 
+## 15.1.2 (2023-04-24)
+Changes
+
+- Update dependencies to latest, fixes security alert
+
 ## 15.1.1 (2023-02-18)
 Changes
 
