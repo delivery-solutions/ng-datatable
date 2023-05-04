@@ -1,6 +1,12 @@
 # Changelog
 
 
+## 16.0.1 (2023-05-04)
+
+Changes
+
+- Small metadata fixes
+
 ## 16.0.0 (2023-05-04)
 
 Changes

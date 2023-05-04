@@ -1,6 +1,6 @@
 {
   "name": "@pascalhonegger/ng-datatable",
-  "version": "16.0.0",
+  "version": "16.0.1",
   "description": "DataTable component for Angular framework",
   "repository": {
     "type": "git",
