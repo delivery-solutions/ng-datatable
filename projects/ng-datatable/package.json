@@ -1,6 +1,6 @@
 {
   "name": "@pascalhonegger/ng-datatable",
-  "version": "16.0.1",
+  "version": "16.0.2",
   "description": "DataTable component for Angular framework",
   "repository": {
     "type": "git",
@@ -8,7 +8,6 @@
   },
   "keywords": [
     "angular",
-    "angular15",
     "angular16",
     "angularcli",
     "ivy",
