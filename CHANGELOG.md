@@ -1,5 +1,12 @@
 # Changelog
 
+
+## 16.0.0 (2023-05-04)
+
+Changes
+
+- Use Angular 16
+
 ## 15.1.2 (2023-04-24)
 Changes
 
