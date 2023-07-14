@@ -1,71 +1,65 @@
 {
   "name": "@deliverysolutions/ng-datatable",
-  "version": "8.0.5",
+  "version": "16.0.3",
   "description": "DataTable component for Angular framework",
   "main": "index.js",
   "scripts": {
-    "prebuild": "rimraf lib",
-    "build": "ngc -p src",
-    "start": "http-server -c-1 -o -p 8875 .",
-    "pretest": "npm run build",
-    "test": "karma start karma.conf.js",
-    "posttest": "node_modules/.bin/remap-istanbul -i coverage/coverage-final.json -o coverage -t html",
-    "coverage-remap": "remap-istanbul -i coverage/coverage-final.json -o coverage/coverage-remapped.lcov -t lcovonly",
-    "coverage": "http-server -c-1 -o -p 9875 ./coverage"
+    "ng": "ng",
+    "start": "npm run build:lib && ng serve demo",
+    "build:lib": "ng build ng-datatable",
+    "test": "ng test",
+    "lint": "ng lint",
+    "publish:prod": "npm run build:lib && cd dist/ng-datatable && npm publish",
+    "publish:dev": "npm run build:lib && cd dist/ng-datatable && npm publish --tag dev"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ds-arb/ng-datatable.git"
-  },
-  "keywords": [
-    "angular",
-    "angular8",
-    "ng",
-    "ng2",
-    "table",
-    "pagination",
-    "sort",
-    "sorting",
-    "feather"
-  ],
-  "author": "rushabh@deliverysolutions.co",
+  "author": "deliverysolutions@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ds-arb/ng-datatable/issues"
   },
-  "homepage": "https://github.com/ds-arb/ng-datatable#readme",
-  "devDependencies": {
-    "@angular/common": "^8.0.0",
-    "@angular/compiler": "^8.0.0",
-    "@angular/compiler-cli": "^8.0.0",
-    "@angular/core": "^8.0.0",
-    "@angular/platform-browser": "^8.0.0",
-    "@angular/platform-browser-dynamic": "^8.0.0",
-    "@types/jasmine": "3.3.7",
-    "@types/lodash": "4.14.144",
-    "core-js": "^2.6.10",
-    "http-server": "^0.11.1",
-    "jasmine-core": "^3.5.0",
-    "karma": "^4.4.1",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-coverage": "^2.0.1",
-    "karma-jasmine": "^2.0.1",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "phantomjs-prebuilt": "^2.1.16",
-    "remap-istanbul": "^0.13.0",
-    "rimraf": "^3.0.0",
-    "rxjs": "^6.5.3",
-    "systemjs": "^0.21.4",
-    "typescript": "3.5.x",
-    "zone.js": "~0.9.1"
+  "homepage": "https://github.com/deliverysolutions/ng-datatable#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deliverysolutions/ng-datatable.git"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "@angular/animations": "^16.0.0",
+    "@angular/common": "^16.0.0",
+    "@angular/compiler": "^16.0.0",
+    "@angular/core": "^16.0.0",
+    "@angular/forms": "^16.0.0",
+    "@angular/platform-browser": "^16.0.0",
+    "@angular/platform-browser-dynamic": "^16.0.0",
+    "@angular/router": "^16.0.0",
+    "bootstrap": "^5.1.3",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.5.0",
+    "zone.js": "~0.13.0"
   },
-  "peerDependencies": {
-    "@angular/core": "^8.0.0",
-    "@angular/common": "^8.0.0",
-    "@angular/platform-browser": "^8.0.0",
-    "rxjs": "^6.0.0"
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.0.0",
+    "@angular-eslint/builder": "^16.0.1",
+    "@angular-eslint/eslint-plugin": "^16.0.1",
+    "@angular-eslint/eslint-plugin-template": "^16.0.1",
+    "@angular-eslint/schematics": "^16.0.1",
+    "@angular-eslint/template-parser": "^16.0.1",
+    "@angular/cli": "^16.0.0",
+    "@angular/compiler-cli": "^16.0.0",
+    "@angular/language-service": "^16.0.0",
+    "@types/jasmine": "^4.3.0",
+    "@types/jasminewd2": "^2.0.9",
+    "@types/node": "^18.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.39.0",
+    "jasmine-core": "^4.5.0",
+    "jasmine-spec-reporter": "~7.0.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "^2.0.0",
+    "ng-packagr": "^16.0.0",
+    "typescript": "~5.0.2"
   }
 }
