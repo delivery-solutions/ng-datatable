@@ -1,10 +1,10 @@
 {
-  "name": "@pascalhonegger/ng-datatable",
+  "name": "@rushvora/ng-datatable",
   "version": "16.0.2",
   "description": "DataTable component for Angular framework",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PascalHonegger/ng-datatable.git"
+    "url": "git+https://github.com/rushvora/ng-datatable.git"
   },
   "keywords": [
     "angular",
@@ -22,9 +22,9 @@
   "author": "pascal.honegger@bluewin.ch",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PascalHonegger/ng-datatable/issues"
+    "url": "https://github.com/rushvora/ng-datatable/issues"
   },
-  "homepage": "https://github.com/PascalHonegger/ng-datatable#readme",
+  "homepage": "https://github.com/rushvora/ng-datatable#readme",
   "peerDependencies": {
     "@angular/common": "^16.0.0",
     "@angular/core": "^16.0.0"
