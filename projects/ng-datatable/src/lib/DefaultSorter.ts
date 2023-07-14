@@ -1,4 +1,4 @@
-import {Component, Directive, ElementRef, EventEmitter, HostListener, Input, OnInit, Output} from "@angular/core";
+import {Component, Directive, EventEmitter, HostListener, Input, OnInit, Output} from "@angular/core";
 import {DataTable, SortBy, SortEvent} from "./DataTable";
 
 @Component({
@@ -46,7 +46,7 @@ export class SortOnKeypressDirective {
 
     @Output() sortOnKeypress: EventEmitter<void> = new EventEmitter();
 
-    constructor(private el: ElementRef) { }
+    constructor() { }
 
     @HostListener('keydown', ['$event']) onKeyDown(event: KeyboardEvent) {
         const key = event.key;
