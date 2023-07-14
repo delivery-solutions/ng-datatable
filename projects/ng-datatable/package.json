@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/deliverysolutions/ng-datatable#readme",
   "peerDependencies": {
-    "@angular/common": "^16.0.0",
-    "@angular/core": "^16.0.0"
+    "@angular/common": "15 - 16",
+    "@angular/core": "15 - 16"
   },
   "dependencies": {
     "tslib": "^2.0.0"
