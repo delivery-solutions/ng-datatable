@@ -1,12 +1,71 @@
 # Table component with sorting and pagination for Angular
-It is a forked version of [ng-datatable](https://github.com/cmglez10/ng-datatable) updated to Angular 13. The build pipeline was changed to Angular CLI, which should lead to smaller bundles and ivy compatibility.
+It is a forked version of [ng-datatable](https://github.com/PascalHonegger/ng-datatable), updated to Angular 15, using Feather icons instead of Glyphicon for showing sorting arrows.
 
-[![npm version](https://badge.fury.io/js/%40pascalhonegger%2Fng-datatable.svg)](https://badge.fury.io/js/%40pascalhonegger%2Fng-datatable)
+## IMPORTANT
+I am currently using custom CSS, to transform the fe-code icon 90 degrees as the default sort icon, and bolded + black chevron up & down icons accordingly.
+When feather releases their sort icons (should be soon, going by the related issues), will update the package to use those instead of the current patchwork.
 
+#### Add below to your CSS theme. 
+```
+.fe-bold {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Feather' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+```
+.fe-bold-transform90 {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Feather' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Transform 90 degrees, specifically for fe-code for sorting */
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  display: inline-block;
+}
+```
+```
+.fe-bold-black {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Feather' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: bold;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  color: black;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
 ## Installation
 
 ```
-npm i @pascalhonegger/ng-datatable --save
+npm i @deliverysolutions/ng-datatable --save
 ```
 
 ## Usage example
@@ -15,7 +74,7 @@ AppModule.ts
 ```typescript
 import {NgModule} from "@angular/core";
 ...
-import {DataTableModule} from "@pascalhonegger/ng-datatable";
+import {DataTableModule} from "@deliverysolutions/ng-datatable";
 
 @NgModule({
     imports: [

@@ -1,6 +1,7 @@
 {
-  "name": "ng-datatable",
-  "version": "0.0.0",
+  "name": "@rushvora/ng-datatable",
+  "version": "16.0.3",
+  "description": "DataTable component for Angular framework",
   "scripts": {
     "ng": "ng",
     "start": "npm run build:lib && ng serve demo",
@@ -10,11 +11,15 @@
     "publish:prod": "npm run build:lib && cd dist/ng-datatable && npm publish",
     "publish:dev": "npm run build:lib && cd dist/ng-datatable && npm publish --tag dev"
   },
-  "author": "pascal.honegger@bluewin.ch",
+  "author": "rushvora@gmail.com",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rushvora/ng-datatable/issues"
+  },
+  "homepage": "https://github.com/rushvora/ng-datatable#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PascalHonegger/ng-datatable.git"
+    "url": "git+https://github.com/rushvora/ng-datatable.git"
   },
   "private": true,
   "dependencies": {

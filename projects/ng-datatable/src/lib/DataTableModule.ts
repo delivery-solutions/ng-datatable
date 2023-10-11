@@ -2,7 +2,7 @@ import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 
 import {DataTable} from "./DataTable";
-import {DefaultSorter} from "./DefaultSorter";
+import {DefaultSorter, SortOnKeypressDirective} from "./DefaultSorter";
 import {Paginator} from "./Paginator";
 import {BootstrapPaginator} from "./BootstrapPaginator";
 
@@ -14,7 +14,8 @@ import {BootstrapPaginator} from "./BootstrapPaginator";
         DataTable,
         DefaultSorter,
         Paginator,
-        BootstrapPaginator
+        BootstrapPaginator,
+        SortOnKeypressDirective,
     ],
     exports: [
         DataTable,

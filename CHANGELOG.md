@@ -1,5 +1,56 @@
 # Changelog
 
+## 15.1.2 (2023-04-24)
+Changes
+
+- Update dependencies to latest, fixes security alert
+
+## 15.1.1 (2023-02-18)
+Changes
+
+- Update dependencies to latest (closes #13)
+
+## 15.1.0 (2022-11-28)
+
+Changes
+
+- Not not throw runtime error if sortBy is undefined (thanks @alexkushnarov)
+
+## 15.0.0 (2022-11-28)
+
+Changes
+
+- Use Angular 15
+
+## 14.0.1 (2022-10-15)
+
+Changes
+
+- Minor dependency upgrades
+- Adjust linting configuration
+
+## 14.0.0 (2022-06-19)
+
+Changes
+
+- Use Angular 14
+
+This update seems to have changed the behaviour of the change detection, if you notice any unexpected behaviour please open a new issue.
+
+## 13.1.0 (2022-02-05)
+
+Changes
+
+- Consistently sort nullish values (#8) (**Changed behaviour**)
+
+This release fixes the very strange null sorting behaviour. Null values are now treated like empty strings and are placed at the top when sorting ascendingly.
+
+## 13.0.0 (2021-11-10)
+
+Changes
+
+- Use Angular 13
+
 ## 12.0.1 (2020-11-23)
 
 Changes:
