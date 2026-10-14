@@ -1,18 +1,17 @@
-import {Component, Directive, EventEmitter, HostListener, Input, OnInit, Output} from "@angular/core";
+import {ChangeDetectionStrategy, Component, Directive, EventEmitter, HostListener, Input, OnInit, Output} from "@angular/core";
 import {DataTable, SortBy, SortEvent} from "./DataTable";
 
 @Component({
     selector: "mfDefaultSorter",
     template: `
-        <a (click)="sort()" (sortOnKeypress)="sort()" class="text-nowrap text-decoration-none" tabindex="0">
+        <a style="cursor: pointer" (click)="sort()" (sortOnKeypress)="sort()" class="text-nowrap">
             <ng-content></ng-content>
             <span *ngIf="!isSortedByMeAsc && !isSortedByMeDesc" class="fe-bold-transform90 fe-code" aria-hidden="true" aria-label="none"></span>
             <span *ngIf="isSortedByMeAsc" class="fe-bold-black fe-chevron-up" aria-hidden="true" aria-label="asc"></span>
             <span *ngIf="isSortedByMeDesc" class="fe-bold-black fe-chevron-down" aria-hidden="true" aria-label="desc"></span>
         </a>`,
-        styles: [
-            "a { cursor: pointer; }"
-        ]
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false,
 })
 export class DefaultSorter implements OnInit {
     @Input("by") sortBy: SortBy;
@@ -43,7 +42,8 @@ export class DefaultSorter implements OnInit {
 }
 
 @Directive({
-    selector: '[sortOnKeypress]'
+    selector: '[sortOnKeypress]',
+    standalone: false,
 })
 export class SortOnKeypressDirective {
 

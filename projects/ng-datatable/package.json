@@ -1,6 +1,6 @@
 {
   "name": "@deliverysolutions/ng-datatable",
-  "version": "16.1.0",
+  "version": "22.0.0",
   "description": "DataTable component for Angular framework",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "keywords": [
     "angular",
-    "angular16",
+    "angular22",
     "angularcli",
     "ivy",
     "ng",
@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/deliverysolutions/ng-datatable#readme",
   "peerDependencies": {
-    "@angular/common": "15 - 16",
-    "@angular/core": "15 - 16"
+    "@angular/common": ">=22.0.0",
+    "@angular/core": ">=22.0.0"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.3.0"
   }
 }
