@@ -1,9 +1,11 @@
-import {Component, Input, SimpleChange, OnChanges, Optional} from "@angular/core";
+import {ChangeDetectionStrategy, Component, Input, SimpleChange, OnChanges, Optional} from "@angular/core";
 import {DataTable, PageEvent} from "./DataTable";
 
 @Component({
     selector: "mfPaginator",
-    template: `<ng-content></ng-content>`
+    template: `<ng-content></ng-content>`,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false,
 })
 export class Paginator implements OnChanges {
 

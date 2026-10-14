@@ -1,11 +1,13 @@
-import {SimpleChange, Component} from "@angular/core";
+import {ChangeDetectionStrategy, SimpleChange, Component} from "@angular/core";
 import {DataTable, PageEvent, SortBy, SortEvent, SortOrder} from "./DataTable";
 import {TestBed, ComponentFixture} from "@angular/core/testing";
 import {By} from "@angular/platform-browser";
 import {switchMap, range} from "rxjs";
 
 @Component({
-    template: `<table [mfData]="[]"></table>`
+    template: `<table [mfData]="[]"></table>`,
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false,
 })
 class TestComponent {
 }

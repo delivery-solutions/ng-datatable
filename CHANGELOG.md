@@ -1,5 +1,13 @@
 # Changelog
 
+## 22.0.0 (2026-10-06)
+
+Changes
+
+- Use Angular 22 (TypeScript 6, ng-packagr 22, ESLint 9 flat config); requires Angular 22 or later
+- Declarations are explicitly `standalone: false` with `ChangeDetectionStrategy.Eager`, so behaviour is unchanged under Angular 22 defaults
+- Templates match the published 15.0.2 build (Bootstrap 4 classes: `pull-right float-sm-right`, inline `cursor: pointer`) instead of the Bootstrap 5 markup from 16.x
+
 ## 16.0.1 & 16.0.2 (2023-05-04)
 
 Changes

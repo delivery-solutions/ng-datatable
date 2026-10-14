@@ -1,10 +1,12 @@
-import {Component, OnInit} from "@angular/core";
+import {ChangeDetectionStrategy, Component, OnInit} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {SortBy, SortOrder} from "ng-datatable";
 
 @Component({
     selector: "app-root",
-    templateUrl: "./app.component.html"
+    templateUrl: "./app.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
+    standalone: false,
 })
 export class AppComponent implements OnInit {
 

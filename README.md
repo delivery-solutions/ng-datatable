@@ -1,5 +1,5 @@
 # Table component with sorting and pagination for Angular
-It is a forked version of [ng-datatable](https://github.com/PascalHonegger/ng-datatable), updated to Angular 16, using Feather icons instead of Glyphicon for showing sorting arrows.
+It is a forked version of [ng-datatable](https://github.com/PascalHonegger/ng-datatable), updated to Angular 22, using Feather icons instead of Glyphicon for showing sorting arrows.
 
 ## Installation & Usage example
 
